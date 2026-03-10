@@ -13,7 +13,7 @@ export interface IAppointment extends mongoose.Document {
   address: string;
   vehicleName: string;
   make: string;
-  model: string;
+  vehicleModel: string; // ✅ renamed from 'model'
   year: string;
   serviceType: string;
   vehicleCategory: string;
@@ -57,7 +57,7 @@ const appointmentSchema = new mongoose.Schema<IAppointment>(
       type: String,
       required: [true, 'Vehicle make is required'],
     },
-    model: {
+    vehicleModel: { // ✅ renamed from 'model'
       type: String,
       required: [true, 'Vehicle model is required'],
     },
